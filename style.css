@@ -1,0 +1,148 @@
+/* Colors we reuse everywhere */
+:root {
+  --bg: #0b0f14;
+  --card: #121a23;
+  --text: #d6e2ee;
+  --muted: #8fa3b5;
+  --accent: #00ff9c;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.7;
+}
+
+/* Top menu */
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(11, 15, 20, 0.95);
+  border-bottom: 1px solid #1d2935;
+  z-index: 10;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 22px;
+  padding: 14px;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* Page sections */
+section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 70px 20px;
+}
+
+#home {
+  text-align: center;
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+
+h1 {
+  font-size: 2.6rem;
+  color: var(--accent);
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+  color: var(--accent);
+}
+
+#home p {
+  font-size: 1.2rem;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+li {
+  background: var(--card);
+  border: 1px solid #1d2935;
+  border-radius: 10px;
+  padding: 14px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+li:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+footer {
+  text-align: center;
+  padding: 24px;
+  color: var(--muted);
+  border-top: 1px solid #1d2935;
+}
+
+/* Phone screens */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+  section {
+    padding: 50px 16px;
+  }
+}
+
+#contact a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.cursor {
+  color: var(--accent);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s, transform 0.8s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+h1 {
+  text-shadow: 0 0 18px rgba(0, 255, 156, 0.45);
+}
